@@ -24,7 +24,7 @@
             </div>
             <div data-role="content">
                  <div>测试1</div>  
-                 <a href="#page2" data-role="button" data-theme="c" data-transition="slideup" />page2</a>
+                 <a class="goto" href="#page2" data-role="button" data-theme="c" data-transition="slideup" />page2</a>
             </div>
         </div>
 
@@ -34,7 +34,7 @@
             </div>
             <div data-role="content">
                  <div>测试2</div>  
-                 <a href="#page3" data-role="button" data-theme="c" data-transition="slideup" />page3</a> 
+                 <a class="goto" href="#page3" data-role="button" data-theme="c" data-transition="slideup" />page3</a> 
             </div>
         </div>
         <div data-role="page" id="page3">
@@ -43,7 +43,7 @@
             </div>
             <div data-role="content">
                  <div>测试3</div>  
-                 <a href="#page1" data-role="button" data-theme="c" data-transition="slideup" />page1</a> 
+                 <a class="goto" href="#page1" data-role="button" data-theme="c" data-transition="slideup" />page1</a> 
             </div>
         </div>
              
@@ -52,7 +52,7 @@
              
       
     <script type="text/javascript">
-            function scrollstartFunc(evt) {  
+                function scrollstartFunc(evt) {  
                     try  
                     {  
                         var target = $(evt.target);  
@@ -62,7 +62,8 @@
                         //获取触点目标id属性值  
                         var targetId = target.attr("id");  
   
-                        alert("targetId: " + targetId);  
+                        // alert("targetId: " + targetId);  
+                        $("#"+targetId).find("a.goto").clidk();
                     }  
                     catch (e) {  
                         alert('myscrollfunc：' + e.message);  
