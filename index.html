@@ -52,9 +52,29 @@
              
       
     <script type="text/javascript">
-    $("document").on("scrollstart",function(){
-         alert(123);
-    })
+            function scrollstartFunc(evt) {  
+                    try  
+                    {  
+                        var target = $(evt.target);  
+                        while (target.attr("id") == undefined) {  
+                            target = target.parent();  
+                        }  
+                        //获取触点目标id属性值  
+                        var targetId = target.attr("id");  
+  
+                        alert("targetId: " + targetId);  
+                    }  
+                    catch (e) {  
+                        alert('myscrollfunc：' + e.message);  
+                    }  
+                }  
+  
+                function myinit() {  
+                    //绑定上下滑动事件  
+                    $("body").bind('scrollstart', function () { scrollstartFunc(event); });  
+                }  
+  
+                window.onload = myinit;  
     </script>
 
 
