@@ -9,6 +9,7 @@
 <link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="js/zepto.js" ></script>
 <style>
  
 </style>
@@ -52,30 +53,13 @@
              
       
     <script type="text/javascript">
-                function scrollstartFunc(evt) {  
-                    try  
-                    {  
-                        var target = $(evt.target);  
-                        while (target.attr("id") == undefined) {  
-                            target = target.parent();  
-                        }  
-                        //获取触点目标id属性值  
-                        var targetId = target.attr("id");  
-  
-                        // alert("targetId: " + targetId);  
-                        target.find("a.goto").clidk();
-                    }  
-                    catch (e) {  
-                        alert('myscrollfunc：' + e.message);  
-                    }  
-                }  
-  
-                function myinit() {  
-                    //绑定上下滑动事件  
-                    $("body").bind('scrollstart', function () { scrollstartFunc(event); });  
-                }  
-  
-                window.onload = myinit;  
+         var z=Zepto;
+         z("body").swipeUp(function(){
+            alert(1)
+         }) ;
+         z("body").swipeDown(function(){
+            alert(2)
+         })  ;      
     </script>
 
 
