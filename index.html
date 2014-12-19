@@ -9,9 +9,23 @@
 <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css" />
 <script src="js/jquery-1.9.1.js"></script>
 <script src="js/jquery.mobile-1.4.5.js"></script>
-<script src="js/zepto.js" ></script>
+<!-- <script src='js/swipe.js'></script>  -->
+<script src="js/touch-0.2.14.min.js"></script>
 <style>
- 
+/* .swipe {
+  overflow: hidden;
+  visibility: hidden;
+  position: relative;
+}
+.swipe-wrap {
+  overflow: hidden;
+  position: relative;
+}
+.swipe-wrap > div {
+  float:left;
+  width:100%;
+  position: relative;
+}*/
 </style>
     <title>css3</title>
      
@@ -48,14 +62,31 @@
             </div>
         </div>
              
-        
+      <!--   <div id='slider' class='swipe'>
+            <div class='swipe-wrap'>
+                <div class='wrap'>123123</div>
+                <div class='wrap'>adasdas</div>
+                <div class='wrap'>34141</div>
+            </div>
+        </div> -->
                 
              
       
     <script type="text/javascript">
-           $('body').swipe(function(){
-                alert(1);
-            })
+//         window.mySwipe = new Swipe(document.getElementById('slider'), {
+//   startSlide: 1,
+//   speed: 400,
+//   auto: 1000,
+//   continuous: true,
+//   disableScroll: false,
+//   stopPropagation: false,
+//   callback: function(index, elem) {},
+//   transitionEnd: function(index, elem) {}
+// });   
+
+touch.on('body', 'swipeleft swiperight', function(ev){
+    console.log("you have done", ev.type);
+});
     </script>
 
 
